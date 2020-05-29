@@ -97,7 +97,9 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
 from catalog.models import Author
-
+class AuthorListView(generic.ListView):
+    model = Author
+    paginate_by = 10
 class AuthorCreate(CreateView):
     model = Author
     fields = '__all__'
